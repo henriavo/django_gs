@@ -1,2 +1,7 @@
 /venv
 .DS_Store
+/mysite/db.sqlite3
+/mysite/polls/__pycache__/*
+
+
+
