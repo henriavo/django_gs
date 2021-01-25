@@ -1,14 +1,42 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<style>
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 21px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+</style>
+
+<h1> Open Polls </h1>
 
 {% if latest_question_list %}
-    <ul>
+    <ul id="myUL">
     {% for question in latest_question_list %}
-        <!-- <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li> -->
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+
+        <li> <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}
+        	</a></li>
     {% endfor %}
     </ul>
+
+
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
