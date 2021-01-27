@@ -3,5 +3,5 @@
 /mysite/db.sqlite3
 /mysite/polls/__pycache__/*
 mysite/mysite/__pycache__/
-
+db.sqlite3
 
